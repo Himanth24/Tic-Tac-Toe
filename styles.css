@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100vh;
+}
+
+:root{
+    --green : rgb(189, 240, 169);
+}
+
+.header{
+    background-color: var(--green);
+    text-align: center;
+    font-size: 70px;
+    font-family: 'poppins',sans-serif;
+    padding: 30px;
+}
