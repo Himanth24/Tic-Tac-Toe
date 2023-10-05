@@ -8,6 +8,7 @@ body{
 
 :root{
     --green : rgb(189, 240, 169);
+    --blue : rgb(162, 183, 221);
 }
 
 .header{
@@ -18,17 +19,16 @@ body{
     padding: 30px;
 }
 
-
 .content{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     margin: auto;
     justify-content: center;
-    background-color: rgb(162, 183, 221);
 }
 
 .grid{
+    padding: 5px;
     display: grid;
     grid-template-columns: 7em 7em 7em;
     grid-template-rows: 7em 7em 7em;
@@ -37,4 +37,17 @@ body{
 
 .cell{
     border: 3px solid black;
+    background-color: var(--blue);
+}
+
+.choose{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    align-items: center;
+    padding: 10px;
+}
+
+.X,.O{
+    padding: 14px 40px;
 }
