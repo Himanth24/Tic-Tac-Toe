@@ -3,6 +3,7 @@ body{
     display: flex;
     flex-flow: column wrap;
     min-height: 100vh;
+    background-color: azure;
 }
 
 :root{
@@ -15,4 +16,25 @@ body{
     font-size: 70px;
     font-family: 'poppins',sans-serif;
     padding: 30px;
+}
+
+
+.content{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    background-color: rgb(162, 183, 221);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 7em 7em 7em;
+    grid-template-rows: 7em 7em 7em;
+    gap: 5px;
+}
+
+.cell{
+    border: 3px solid black;
 }
