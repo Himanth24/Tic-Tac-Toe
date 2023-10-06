@@ -44,6 +44,12 @@ body{
 .cell{
     border: 3px solid black;
     background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 button{

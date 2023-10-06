@@ -54,7 +54,7 @@ const displayController = (()=>{
 
     const updateGameBoard = () => {
         for(let i = 0; i < cells.length; i++){
-            cells[i].textContent = gameBoard.getCell[i];
+            cells[i].textContent = gameBoard.getCell(i);
         }
     };
 
@@ -78,6 +78,59 @@ const displayController = (()=>{
 const gameController = (()=>{
     const playerX = player('X');
     const playerO = player('O');
+    let round = 1;
+    let isOver = false;
 
-    
+    const playRound = (cellIndex) => {
+        gameBoard.setCell(cellIndex,getCurrentPlayerSign());
+        if(checkWinner(cellIndex)){
+            displayController.setResultMessage(getCurrentPlayerSign());
+            isOver = true; 
+            return ;
+        }
+        if(round === 9){
+            displayController.setResultMessage("Draw");
+            isOver = true;
+            return ;
+        }
+        round++;
+        displayController.setMessageElement(`Player ${getCurrentPlayerSign()}'s turn`);
+    }
+
+    const getCurrentPlayerSign = () => {
+        return round%2 === 1 ? playerX.getSign() : playerO.getSign();
+    }
+
+    const checkWinner = (cellIndex) => {
+        const winConditions = [
+            [0, 1, 2], 
+            [0, 3, 6], 
+            [0, 4, 8],
+            [1, 4, 7], 
+            [2, 5, 8], 
+            [2, 4, 6],
+            [3, 4, 5], 
+            [6, 7, 8]
+        ];
+
+        return winConditions
+        .filter(combination => combination.includes(cellIndex))
+        .some(possibleCombination => 
+            possibleCombination.every(index => 
+                gameBoard.getCell(index) === getCurrentPlayerSign()
+            )
+        );
+    }
+
+    const getIsOver = () => {
+        return isOver;
+    }
+
+    const reset = () => {
+        round = 1;
+        isOver = false;
+    }
+
+    return { playRound, getIsOver, reset};
+
 })();
