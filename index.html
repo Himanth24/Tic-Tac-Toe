@@ -12,24 +12,22 @@
         TIC-TAC-TOE
     </header>
     <main class="content">
-        <div class="grid">
-            <div class="cell cell-1"></div>
-            <div class="cell cell-2"></div>
-            <div class="cell cell-3"></div>
-            <div class="cell cell-4"></div>
-            <div class="cell cell-5"></div>
-            <div class="cell cell-6"></div>
-            <div class="cell cell-7"></div>
-            <div class="cell cell-8"></div>
-            <div class="cell cell-9"></div>
+        <div id="message">
+            Player X's Turn
         </div>
-        <div class="choose">
-            <div >
-               <button class="X">X</button> 
-            </div>
-            <div >
-                <button class="O">O</button>
-            </div>
+        <div class="grid">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div>
+            <button id="restart">Restart</button>
         </div>
     </main>
     <footer>

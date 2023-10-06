@@ -19,6 +19,12 @@ body{
     padding: 30px;
 }
 
+#message{
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 50px;
+}
+
 .content{
     display: flex;
     flex-flow: column wrap;
@@ -40,14 +46,10 @@ body{
     background-color: var(--blue);
 }
 
-.choose{
-    display: flex;
-    flex-flow: row wrap;
-    gap: 30px;
-    align-items: center;
-    padding: 10px;
-}
-
-.X,.O{
-    padding: 14px 40px;
+button{
+    background-color: azure;
+    font-size: xx-large;
+    margin: 30px;
+    border: 3px solid black;
+    border-radius: 7px ;
 }
